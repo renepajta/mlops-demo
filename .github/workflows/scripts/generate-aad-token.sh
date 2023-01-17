@@ -6,6 +6,10 @@
 # 3. Service principal client secret
 #
 # It saves the token as the DATABRICKS_TOKEN environment variable for use in subsequent GitHub workflow steps.
+echo $1
+echo $2
+echo $3
+
 DATABRICKS_TOKEN=$(curl --fail -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
                                               "https://login.microsoftonline.com/$1/oauth2/v2.0/token" \
                                               -d "client_id=$2" \
