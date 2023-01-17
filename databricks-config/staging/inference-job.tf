@@ -26,7 +26,7 @@ resource "databricks_job" "batch_inference_job" {
     base_parameters = {
       env = local.env
       # TODO: Specify input and output table names for batch inference here
-      input_table_name  = ""
+      input_table_name  = "mlopsdemo_input"
       output_table_name = "mlopsdemo_predictions"
     }
   }
@@ -34,7 +34,7 @@ resource "databricks_job" "batch_inference_job" {
   git_source {
     url      = var.git_repo_url
     provider = "gitHub"
-    branch   = "main"
+    branch   = "master"
   }
 
   schedule {

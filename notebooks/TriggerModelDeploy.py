@@ -54,7 +54,7 @@ import requests
 
 response = requests.post(
     cd_trigger_url,
-    json={"ref": "main", "inputs": {"modelUri": model_uri}},
+    json={"ref": "master", "inputs": {"modelUri": model_uri}},
     headers={"Authorization": authorization},
 )
 assert response.ok, (
