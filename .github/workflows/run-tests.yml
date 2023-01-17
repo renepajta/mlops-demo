@@ -33,7 +33,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: Generate AAD Token
-        run: ./.github/workflows/scripts/generate-aad-token.sh ${{ secrets.stagingAzureSpTenantId }} ${{ secrets.stagingAzureSpApplicationId }} ${{ secrets.stagingAzureSpClientSecret }}
+        run: ./.github/workflows/scripts/generate-aad-token.sh ${{ secrets.STAGINGAZURESPTENANTID }} ${{ secrets.STAGINGAZURESPAPPLICATIONID }} ${{ secrets.STAGINGAZURESPCLIENTSECRET }}
       - name: Train model
         uses: databricks/run-notebook@v0
         id: train

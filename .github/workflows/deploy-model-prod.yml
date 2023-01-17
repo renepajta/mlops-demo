@@ -28,7 +28,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
       - name: Generate AAD Token
-        run: ./.github/workflows/scripts/generate-aad-token.sh ${{ secrets.prodAzureSpTenantId }} ${{ secrets.prodAzureSpApplicationId }} ${{ secrets.prodAzureSpClientSecret }}
+        run: ./.github/workflows/scripts/generate-aad-token.sh ${{ secrets.PRODAZURESPTENANTID }} ${{ secrets.PRODAZURESPAPPLICATIONID }} ${{ secrets.PRODAZURESPCLIENTSECRET }}
       - name: Deploy model
         env:
           MLFLOW_TRACKING_URI: databricks
