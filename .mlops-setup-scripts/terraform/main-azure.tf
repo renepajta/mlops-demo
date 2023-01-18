@@ -14,13 +14,13 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "tfstate" {
   // Azure resource names can be at most 24 characters
-  name     = substr("mlopsdemo", 0, 24)
+  name     = substr("mlopsdemo230117", 0, 24)
   location = var.azure_resource_group_location
 }
 
 resource "azurerm_storage_account" "tfstate" {
   // Azure resource names can be at most 24 characters
-  name                            = substr("mlopsdemo", 0, 24)
+  name                            = substr("mlopsdemo230117", 0, 24)
   resource_group_name             = azurerm_resource_group.tfstate.name
   location                        = azurerm_resource_group.tfstate.location
   account_tier                    = "Standard"
