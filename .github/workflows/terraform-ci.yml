@@ -8,8 +8,6 @@ on:
     paths:
       - 'databricks-config/**'
 
-permissions: write-all
-
 defaults:
   run:
     working-directory: ./databricks-config
