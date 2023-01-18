@@ -57,7 +57,7 @@ jobs:
           access-control-list-json: >
             [
               {
-                "group_name": "mlops-stack-readers",
+                "group_name": "mlops-demo-service-principals",
                 "permission_level": "CAN_VIEW"
               }
             ]
