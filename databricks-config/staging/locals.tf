@@ -10,5 +10,5 @@ locals {
   // unblocks using a shared workspace across envs.
   env_prefix = "${local.env}-"
   // User group to give read permissions for the batch inference and model training jobs
-  read_user_group = "mlops-stack-readers"
+  read_user_group = "mlops-demo-service-principals"
 }

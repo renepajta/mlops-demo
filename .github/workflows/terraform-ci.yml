@@ -24,7 +24,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Generate AAD Token
-        run: ../.github/workflows/scripts/generate-aad-token.sh ${{ secrets.stagingAzureSpTenantId }} ${{ secrets.stagingAzureSpApplicationId }} ${{ secrets.stagingAzureSpClientSecret }}
+        run: ../.github/workflows/scripts/generate-aad-token.sh ${{ secrets.STAGINGAZURESPTENANTID }} ${{ secrets.STAGINGAZURESPAPPLICATIONID }} ${{ secrets.STAGINGAZURESPCLIENTSECRET }}
       - uses: hashicorp/setup-terraform@v1
       - name: Terraform fmt
         id: fmt
@@ -94,7 +94,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Generate AAD Token
-        run: ../.github/workflows/scripts/generate-aad-token.sh ${{ secrets.prodAzureSpTenantId }} ${{ secrets.prodAzureSpApplicationId }} ${{ secrets.prodAzureSpClientSecret }}
+        run: ../.github/workflows/scripts/generate-aad-token.sh ${{ secrets.PRODAZURESPTENANTID }} ${{ secrets.PRODAZURESPAPPLICATIONID }} ${{ secrets.PRODAZURESPCLIENTSECRET }}
       - uses: hashicorp/setup-terraform@v1
       - name: Terraform fmt
         id: fmt

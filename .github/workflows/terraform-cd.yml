@@ -5,7 +5,7 @@ name: Terraform Deployment for mlops-demo
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
     paths:
       - 'databricks-config/**'
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate AAD Token
-        run: ../.github/workflows/scripts/generate-aad-token.sh ${{ secrets.stagingAzureSpTenantId }} ${{ secrets.stagingAzureSpApplicationId }} ${{ secrets.stagingAzureSpClientSecret }}
+        run: ../.github/workflows/scripts/generate-aad-token.sh ${{ secrets.STAGINGAZURESPTENANTID }} ${{ secrets.STAGINGAZURESPAPPLICATIONID }} ${{ secrets.STAGINGAZURESPCLIENTSECRET }}
       - uses: hashicorp/setup-terraform@v1
       - name: Terraform fmt
         id: fmt
@@ -71,7 +71,7 @@ jobs:
             git push
             git fetch origin release
             git checkout release
-            git cherry-pick main
+            git cherry-pick master
             git push
           fi
   prod:
@@ -84,7 +84,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Generate AAD Token
-        run: ../.github/workflows/scripts/generate-aad-token.sh ${{ secrets.prodAzureSpTenantId }} ${{ secrets.prodAzureSpApplicationId }} ${{ secrets.prodAzureSpClientSecret }}
+        run: ../.github/workflows/scripts/generate-aad-token.sh ${{ secrets.PRODAZURESPTENANTID }} ${{ secrets.PRODAZURESPAPPLICATIONID }} ${{ secrets.PRODAZURESPCLIENTSECRET }}
       - uses: hashicorp/setup-terraform@v1
       - name: Terraform fmt
         id: fmt
@@ -128,6 +128,6 @@ jobs:
             git push
             git fetch origin release
             git checkout release
-            git cherry-pick main
+            git cherry-pick master
             git push
           fi

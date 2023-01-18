@@ -17,8 +17,8 @@ terraform {
   // provisioned by the Terraform config under .mlops-setup-scripts/terraform:
   //
   backend "azurerm" {
-    resource_group_name  = "mlopsdemo"
-    storage_account_name = "mlopsdemo"
+    resource_group_name  = "mlopsdemo230117"
+    storage_account_name = "mlopsdemo230117"
     container_name       = "cicd-setup-tfstate"
     key                  = "cicd-setup.terraform.tfstate"
   }

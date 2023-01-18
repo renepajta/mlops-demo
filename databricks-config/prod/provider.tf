@@ -11,8 +11,8 @@ terraform {
   // state backend must be specified (you cannot use the default "local" backend), otherwise resource deployment
   // will fail.
   backend "azurerm" {
-    resource_group_name  = "mlopsdemo"
-    storage_account_name = "mlopsdemo"
+    resource_group_name  = "mlopsdemo230117"
+    storage_account_name = "mlopsdemo230117"
     container_name       = "tfstate"
     key                  = "prod.terraform.tfstate"
   }

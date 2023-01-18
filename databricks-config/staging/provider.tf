@@ -8,8 +8,8 @@ terraform {
   // referenced below and store appropriate credentials for accessing the container from CI/CD.
   //
   backend "azurerm" {
-    resource_group_name  = "mlopsdemo"
-    storage_account_name = "mlopsdemo"
+    resource_group_name  = "mlopsdemo230117"
+    storage_account_name = "mlopsdemo230117"
     container_name       = "tfstate"
     key                  = "staging.terraform.tfstate"
   }
